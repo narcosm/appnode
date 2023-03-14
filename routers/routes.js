@@ -20,6 +20,9 @@ router.get(routers.BLOCKCHAIN, wrap(blockchainController.listBlockchain));
 // valida la blockchain actual del APP
 router.get(routers.BLOCKCHAIN + "/valida", wrap(blockchainController.validaBlockchain));
 
+//consulta HTML
+router.get(routers.BLOCKCHAIN + "/vista", wrap(blockchainController.listBlockchainHtml));
+
 router.get(routers.HEALTH, wrap(async (req, res) => {
     res.status(OK).json({ message: 'OK' })
 }));

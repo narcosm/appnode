@@ -5,7 +5,6 @@ class BlockChain {
     constructor() {
         this.chain = [this.crearBloqueGenesis()];
         this.dificultad = 4;
-
     }
     crearBloqueGenesis() {
         return new Block('Bloque Genesis', '0');
@@ -18,9 +17,9 @@ class BlockChain {
     agregarBloque(nuevoBloque) {
         nuevoBloque.hashPrevio = this.getUltimoBloque().hash;
         nuevoBloque.id = this.getUltimoBloque().id + 1;
-        //nuevoBloque.hash = nuevoBloque.calcularHash();
         nuevoBloque.minarBloque(this.dificultad)
         this.chain.push(nuevoBloque);
+    
     }
 
     validaChain() {
